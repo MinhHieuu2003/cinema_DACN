@@ -1,0 +1,58 @@
+    <div th:fragment="navigation">
+    <aside class="sidebar" >
+      <div class="toggle">
+        <a href="#" class="burger js-menu-toggle" data-toggle="collapse" data-target="#main-navbar">
+              <span></span>
+            </a>
+      </div>
+      <div class="side-inner">
+
+        <div class="profile">
+          <img src="/images/person_1.jpg" alt="Image" class="img-fluid">
+          <h3 class="name">Malenia</h3>
+          <span class="country">HCM City, Vietnam</span>
+        </div>
+
+        <div class="counter d-flex justify-content-center">
+          <!-- <div class="row justify-content-center"> -->
+            <div class="col">
+              <strong class="number">999</strong>
+              <span class="number-label">Posts</span>
+            </div>
+            <div class="col">
+              <strong class="number">999k</strong>
+              <span class="number-label">Followers</span>
+            </div>
+            <div class="col">
+              <strong class="number">999</strong>
+              <span class="number-label">Following</span>
+            </div>
+          <!-- </div> -->
+        </div>
+        
+        <div class="nav-menu">
+          <ul>
+          	<li><a th:href="@{/admin}"><span class="fa fa-home mr-3"></span>Trang Chủ</a></li>
+            <li><a th:href="@{/admin/accounts}"><span class="fas fa-users mr-3"></span>Tài Khoản</a></li>
+            <li><a th:href="@{/admin/movies}"><span class="fas fa-film mr-3"></span>Phim Ảnh</a></li>
+            <li><a th:href="@{/admin/rooms}"><span class="fa fa-couch mr-3"></span>Phòng</a></li>
+            <li><a th:href="@{/admin/branches}"><span class="fas fa-building mr-3"></span>Chi Nhánh</a></li>
+            <li><a th:href="@{/admin/schedules}"><span class="far fa-calendar-alt mr-3"></span>Lịch Chiếu</a></li>
+            <li><a th:href="@{/admin/bills}"><span class="fa fa-money mr-3"></span>Hoá Đơn</a></li>
+            <li><a th:href="@{/sign-out}"><span class="fa fa-sign-out mr-3"></span>Đăng Xuất</a></li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+    <script type="text/javascript">
+    $(function () {
+    	var curURL=window.location.href;
+    	$(".nav-menu ul li").filter(function( index ) {
+    		var tag= $( "a", this ).attr("href");
+    	    return curURL.includes(tag) && tag!="/admin";
+    	  }).addClass("active");
+    });
+    	
+    	
+    </script>
+</div>
